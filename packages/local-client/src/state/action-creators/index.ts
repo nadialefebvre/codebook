@@ -1,4 +1,5 @@
 import { Dispatch } from "redux"
+import axios from "axios"
 import { ActionType } from "../action-types"
 import {
   UpdateCellAction,
@@ -6,9 +7,9 @@ import {
   MoveCellAction,
   InsertCellAfterAction,
   Direction,
-  Action,
+  Action
 } from "../actions"
-import { CellTypes } from "../cell"
+import { Cell, CellTypes } from "../cell"
 import bundle from "../../bundler"
 
 export const updateCell = (id: string, content: string): UpdateCellAction => {
@@ -16,15 +17,15 @@ export const updateCell = (id: string, content: string): UpdateCellAction => {
     type: ActionType.UPDATE_CELL,
     payload: {
       id,
-      content,
-    },
+      content
+    }
   }
 }
 
 export const deleteCell = (id: string): DeleteCellAction => {
   return {
     type: ActionType.DELETE_CELL,
-    payload: id,
+    payload: id
   }
 }
 
@@ -33,8 +34,8 @@ export const moveCell = (id: string, direction: Direction): MoveCellAction => {
     type: ActionType.MOVE_CELL,
     payload: {
       id,
-      direction,
-    },
+      direction
+    }
   }
 }
 
@@ -46,8 +47,8 @@ export const insertCellAfter = (
     type: ActionType.INSERT_CELL_AFTER,
     payload: {
       id,
-      type,
-    },
+      type
+    }
   }
 }
 
@@ -56,8 +57,8 @@ export const createBundle = (cellId: string, input: string) => {
     dispatch({
       type: ActionType.BUNDLE_START,
       payload: {
-        cellId,
-      },
+        cellId
+      }
     })
 
     const result = await bundle(input)
@@ -66,8 +67,34 @@ export const createBundle = (cellId: string, input: string) => {
       type: ActionType.BUNDLE_COMPLETE,
       payload: {
         cellId,
-        bundle: result,
-      },
+        bundle: result
+      }
     })
   }
+}
+
+export const fetchCells = () => {
+  return async (dispatch: Dispatch<Action>) => {
+    dispatch({ type: ActionType.FETCH_CELLS })
+
+    try {
+      const { data }: { data: Cell[] } = await axios.get("/cells")
+      dispatch({ type: ActionType.FETCH_CELLS_COMPLETE, payload: data })
+    } catch (err) {
+      if (err instanceof Error) {
+        dispatch({
+          type: ActionType.FETCH_CELLS_ERROR,
+          payload: err.message
+        })
+      }
+    }
+  }
+}
+
+export const saveCell = () => {
+  return
+}
+
+export const patate = () => {
+  return
 }
