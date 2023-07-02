@@ -7,7 +7,7 @@ import {
   MoveCellAction,
   InsertCellAfterAction,
   Direction,
-  Action
+  Action,
 } from "../actions"
 import { Cell, CellTypes } from "../cell"
 import bundle from "../../bundler"
@@ -18,15 +18,15 @@ export const updateCell = (id: string, content: string): UpdateCellAction => {
     type: ActionType.UPDATE_CELL,
     payload: {
       id,
-      content
-    }
+      content,
+    },
   }
 }
 
 export const deleteCell = (id: string): DeleteCellAction => {
   return {
     type: ActionType.DELETE_CELL,
-    payload: id
+    payload: id,
   }
 }
 
@@ -35,8 +35,8 @@ export const moveCell = (id: string, direction: Direction): MoveCellAction => {
     type: ActionType.MOVE_CELL,
     payload: {
       id,
-      direction
-    }
+      direction,
+    },
   }
 }
 
@@ -48,8 +48,8 @@ export const insertCellAfter = (
     type: ActionType.INSERT_CELL_AFTER,
     payload: {
       id,
-      type
-    }
+      type,
+    },
   }
 }
 
@@ -58,8 +58,8 @@ export const createBundle = (cellId: string, input: string) => {
     dispatch({
       type: ActionType.BUNDLE_START,
       payload: {
-        cellId
-      }
+        cellId,
+      },
     })
 
     const result = await bundle(input)
@@ -68,8 +68,8 @@ export const createBundle = (cellId: string, input: string) => {
       type: ActionType.BUNDLE_COMPLETE,
       payload: {
         cellId,
-        bundle: result
-      }
+        bundle: result,
+      },
     })
   }
 }
@@ -85,7 +85,7 @@ export const fetchCells = () => {
       if (err instanceof Error) {
         dispatch({
           type: ActionType.FETCH_CELLS_ERROR,
-          payload: err.message
+          payload: err.message,
         })
       }
     }
@@ -95,9 +95,9 @@ export const fetchCells = () => {
 export const saveCells = () => {
   return async (dispatch: Dispatch<Action>, getState: () => RootState) => {
     const {
-      cells: { data, order }
+      cells: { data, order },
     } = getState()
-    const cells = order.map(id => data[id])
+    const cells = order.map((id) => data[id])
 
     try {
       await axios.post("/cells", { cells })
@@ -105,7 +105,7 @@ export const saveCells = () => {
       if (err instanceof Error) {
         dispatch({
           type: ActionType.SAVE_CELLS_ERROR,
-          payload: err.message
+          payload: err.message,
         })
       }
     }
