@@ -1,6 +1,7 @@
 import express from "express"
 import { createProxyMiddleware } from "http-proxy-middleware"
 import path from "path"
+
 import { createCellsRouter } from "./routes/cells"
 
 export const serve = (
@@ -19,7 +20,7 @@ export const serve = (
         target: "http://127.0.0.1:3000",
         ws: true,
         logLevel: "silent",
-        changeOrigin: true
+        changeOrigin: true,
       })
     )
   } else {

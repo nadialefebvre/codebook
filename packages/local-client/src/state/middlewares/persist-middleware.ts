@@ -1,8 +1,10 @@
 import { Dispatch } from "redux"
-import { Action } from "../actions"
+
 import { ActionType } from "../action-types"
-import { saveCells } from "../action-creators"
+import { Action } from "../actions"
 import { RootState } from "../reducers"
+
+import { saveCells } from "../action-creators"
 
 export const persistMiddleware = ({
   dispatch,

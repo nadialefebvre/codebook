@@ -1,17 +1,19 @@
-import { Dispatch } from "redux"
 import axios from "axios"
+import { Dispatch } from "redux"
+
 import { ActionType } from "../action-types"
 import {
-  UpdateCellAction,
-  DeleteCellAction,
-  MoveCellAction,
-  InsertCellAfterAction,
-  Direction,
   Action,
+  DeleteCellAction,
+  Direction,
+  InsertCellAfterAction,
+  MoveCellAction,
+  UpdateCellAction,
 } from "../actions"
 import { Cell, CellTypes } from "../cell"
-import bundle from "../../bundler"
 import { RootState } from "../reducers"
+
+import bundle from "../../bundler"
 
 export const updateCell = (id: string, content: string): UpdateCellAction => {
   return {

@@ -1,5 +1,7 @@
 import "./action-bar.css"
+
 import { useActions } from "../hooks/use-actions"
+
 import ActionButton from "./action-button"
 
 interface ActionBarInterface {
