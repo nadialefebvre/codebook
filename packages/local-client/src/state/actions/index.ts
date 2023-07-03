@@ -3,14 +3,6 @@ import { Cell, CellTypes } from "../cell"
 
 export type Direction = "up" | "down"
 
-export interface MoveCellAction {
-  type: ActionType.MOVE_CELL
-  payload: {
-    id: string
-    direction: Direction
-  }
-}
-
 export interface DeleteCellAction {
   type: ActionType.DELETE_CELL
   payload: string
@@ -21,6 +13,14 @@ export interface InsertCellAfterAction {
   payload: {
     id: string | null
     type: CellTypes
+  }
+}
+
+export interface MoveCellAction {
+  type: ActionType.MOVE_CELL
+  payload: {
+    id: string
+    direction: Direction
   }
 }
 
@@ -70,9 +70,9 @@ export interface SaveCellsErrorAction {
 }
 
 export type Action =
-  | MoveCellAction
   | DeleteCellAction
   | InsertCellAfterAction
+  | MoveCellAction
   | UpdateCellAction
   | BundleStartAction
   | BundleCompleteAction

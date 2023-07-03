@@ -9,7 +9,7 @@ import AddCell from "./add-cell"
 import CellListItem from "./cell-list-item"
 
 const CellList: React.FC = () => {
-  const cells = useTypedSelector(({ cells: { order, data } }) => {
+  const cells = useTypedSelector(({ cells: { data, order } }) => {
     return order.map((id) => data[id])
   })
 

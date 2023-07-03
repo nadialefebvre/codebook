@@ -20,9 +20,9 @@ export const serveCommand = new Command()
     try {
       const dir = path.join(process.cwd(), path.dirname(filename))
       await serve(
-        parseInt(options.port),
-        path.basename(filename),
         dir,
+        path.basename(filename),
+        parseInt(options.port),
         !isProduction
       )
       console.log(
@@ -36,7 +36,7 @@ export const serveCommand = new Command()
           )
         }
       } else if (err instanceof Error) {
-        console.log("Here's the problem", err.message)
+        console.log("Here's the problem:", err.message)
       }
       process.exit(1)
     }

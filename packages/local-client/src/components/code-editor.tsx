@@ -11,7 +11,6 @@ import "./syntax.css"
 interface CodeEditorProps {
   initialValue: string
   onChange(value: string): void
-  // onChange1: (value: string) => void
 }
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
@@ -65,10 +64,8 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
       </button>
       <MonacoEditor
         editorDidMount={onEditorDidMount}
-        value={initialValue}
         height="100%"
         language="javascript"
-        theme="dark"
         options={{
           wordWrap: "on",
           minimap: { enabled: false },
@@ -79,6 +76,8 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
           scrollBeyondLastLine: false,
           automaticLayout: true,
         }}
+        theme="dark"
+        value={initialValue}
       />
     </div>
   )

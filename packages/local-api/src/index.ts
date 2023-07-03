@@ -5,14 +5,14 @@ import path from "path"
 import { createCellsRouter } from "./routes/cells"
 
 export const serve = (
-  port: number,
-  filename: string,
   dir: string,
+  filename: string,
+  port: number,
   useProxy: boolean
 ) => {
   const app = express()
 
-  app.use(createCellsRouter(filename, dir))
+  app.use(createCellsRouter(dir, filename))
 
   if (useProxy) {
     app.use(

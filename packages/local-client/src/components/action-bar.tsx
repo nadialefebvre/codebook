@@ -9,16 +9,16 @@ interface ActionBarInterface {
 }
 
 const ActionBar: React.FC<ActionBarInterface> = ({ id }) => {
-  const { moveCell, deleteCell } = useActions()
+  const { deleteCell, moveCell } = useActions()
 
   return (
     <div className="action-bar">
-      <ActionButton onClick={() => moveCell(id, "up")} icon="fas fa-arrow-up" />
+      <ActionButton icon="fas fa-arrow-up" onClick={() => moveCell(id, "up")} />
       <ActionButton
-        onClick={() => moveCell(id, "down")}
         icon="fas fa-arrow-down"
+        onClick={() => moveCell(id, "down")}
       />
-      <ActionButton onClick={() => deleteCell(id)} icon="fas fa-times" />
+      <ActionButton icon="fas fa-times" onClick={() => deleteCell(id)} />
     </div>
   )
 }

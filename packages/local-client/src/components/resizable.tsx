@@ -4,11 +4,11 @@ import { ResizableBox, ResizableBoxProps } from "react-resizable"
 import "./resizable.css"
 
 interface ResizableProps {
-  direction: "horizontal" | "vertical"
   children?: React.ReactNode
+  direction: "horizontal" | "vertical"
 }
 
-const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
+const Resizable: React.FC<ResizableProps> = ({ children, direction }) => {
   const [innerHeight, setInnerHeight] = useState(window.innerHeight)
   const [innerWidth, setInnerWidth] = useState(window.innerWidth)
   const [width, setWidth] = useState(window.innerWidth * 0.75)
@@ -41,21 +41,21 @@ const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
     resizableProps = {
       className: "resize-horizontal",
       height: Infinity,
-      width: width,
-      resizeHandles: ["e"],
       maxConstraints: [innerWidth * 0.75, Infinity],
       minConstraints: [innerWidth * 0.2, Infinity],
       onResizeStop: (event, data) => {
         setWidth(data.size.width)
       },
+      resizeHandles: ["e"],
+      width: width,
     }
   } else if (direction === "vertical") {
     resizableProps = {
       height: 300,
-      width: Infinity,
-      resizeHandles: ["s"],
       maxConstraints: [Infinity, innerHeight * 0.9],
       minConstraints: [Infinity, 24],
+      resizeHandles: ["s"],
+      width: Infinity,
     }
   }
 

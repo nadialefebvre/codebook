@@ -6,9 +6,9 @@ import { Action } from "../actions"
 interface BundlesState {
   [key: string]:
     | {
-        loading: boolean
         code: string
         err: string
+        loading: boolean
       }
     | undefined
 }
@@ -20,19 +20,21 @@ const reducer = produce(
     switch (action.type) {
       case ActionType.BUNDLE_START:
         state[action.payload.cellId] = {
-          loading: true,
           code: "",
           err: "",
+          loading: true,
         }
         return state
+
       case ActionType.BUNDLE_COMPLETE:
         state[action.payload.cellId] = {
-          loading: false,
           code: action.payload.bundle.code,
           err: action.payload.bundle.err,
+          loading: false,
         }
 
         return state
+
       default:
         return state
     }

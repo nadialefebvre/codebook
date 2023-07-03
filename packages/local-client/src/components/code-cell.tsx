@@ -17,7 +17,7 @@ interface CodeCellProps {
 }
 
 const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
-  const { updateCell, createBundle } = useActions()
+  const { createBundle, updateCell } = useActions()
 
   const bundle = useTypedSelector((state) => state.bundles[cell.id])
 
