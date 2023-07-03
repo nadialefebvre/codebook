@@ -7,7 +7,7 @@ import "bulmaswatch/superhero/bulmaswatch.min.css"
 
 import { store } from "./state"
 
-import CellList from "./components/cell-list"
+import CellList from "./components/CellList"
 
 const App = () => {
   return (

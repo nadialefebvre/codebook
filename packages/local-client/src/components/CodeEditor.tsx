@@ -5,7 +5,7 @@ import prettier from "prettier"
 import parser from "prettier/parser-babel"
 import { useRef } from "react"
 
-import "./code-editor.css"
+import "./CodeEditor.css"
 import "./syntax.css"
 
 interface CodeEditorProps {

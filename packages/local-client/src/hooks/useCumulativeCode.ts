@@ -1,4 +1,4 @@
-import { useTypedSelector } from "./use-typed-selector"
+import { useTypedSelector } from "./useTypedSelector"
 
 export const useCumulativeCode = (cellId: string) => {
   return useTypedSelector((state) => {

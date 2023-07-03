@@ -1,6 +1,6 @@
 import { produce } from "immer"
 
-import { ActionType } from "../action-types"
+import { ActionType } from "../actionTypes"
 import { Action } from "../actions"
 
 interface BundlesState {

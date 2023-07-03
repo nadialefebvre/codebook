@@ -1,8 +1,8 @@
-import "./action-bar.css"
+import "./ActionBar.css"
 
-import { useActions } from "../hooks/use-actions"
+import { useActions } from "../hooks/useActions"
 
-import ActionButton from "./action-button"
+import ActionButton from "./ActionButton"
 
 interface ActionBarInterface {
   id: string

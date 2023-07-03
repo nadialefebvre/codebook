@@ -3,7 +3,7 @@ import thunk from "redux-thunk"
 
 import reducers from "./reducers"
 
-import { persistMiddleware } from "./middlewares/persist-middleware"
+import { persistMiddleware } from "./middlewares/persistMiddleware"
 
 export const store = createStore(
   reducers,
