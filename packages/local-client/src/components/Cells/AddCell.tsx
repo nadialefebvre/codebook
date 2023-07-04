@@ -1,6 +1,6 @@
 import "./AddCell.css"
 
-import { useActions } from "../hooks/useActions"
+import { useActions } from "../../hooks/useActions"
 
 interface AddCellProps {
   forceVisible?: boolean

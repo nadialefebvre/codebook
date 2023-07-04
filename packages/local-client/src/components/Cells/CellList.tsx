@@ -2,8 +2,8 @@ import { Fragment, useEffect } from "react"
 
 import "./CellList.css"
 
-import { useActions } from "../hooks/useActions"
-import { useTypedSelector } from "../hooks/useTypedSelector"
+import { useActions } from "../../hooks/useActions"
+import { useTypedSelector } from "../../hooks/useTypedSelector"
 
 import AddCell from "./AddCell"
 import CellListItem from "./CellListItem"

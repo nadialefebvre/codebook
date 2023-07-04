@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from "react"
 
 import "./TextEditor.css"
 
-import { Cell } from "../state"
+import { Cell } from "../../state"
 
-import { useActions } from "../hooks/useActions"
+import { useActions } from "../../hooks/useActions"
 
 interface TextEditorProps {
   cell: Cell

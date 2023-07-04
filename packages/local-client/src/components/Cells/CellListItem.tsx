@@ -1,10 +1,10 @@
 import "./CellListItem.css"
 
-import { Cell } from "../state"
+import { Cell } from "../../state"
 
 import ActionBar from "./ActionBar"
-import CodeCell from "./CodeCell"
-import TextEditor from "./TextEditor"
+import CodeCell from "../CodeEditor/CodeCell"
+import TextEditor from "../TextEditor/TextEditor"
 
 interface CellListItemProps {
   cell: Cell

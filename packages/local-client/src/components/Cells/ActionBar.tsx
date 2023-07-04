@@ -1,6 +1,6 @@
 import "./ActionBar.css"
 
-import { useActions } from "../hooks/useActions"
+import { useActions } from "../../hooks/useActions"
 
 import ActionBarButton from "./ActionBarButton"
 

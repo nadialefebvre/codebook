@@ -7,14 +7,12 @@ import "bulmaswatch/superhero/bulmaswatch.min.css"
 
 import { store } from "./state"
 
-import CellList from "./components/CellList"
+import CellList from "./components/Cells/CellList"
 
 const App = () => {
   return (
     <Provider store={store}>
-      <div>
-        <CellList />
-      </div>
+      <CellList />
     </Provider>
   )
 }

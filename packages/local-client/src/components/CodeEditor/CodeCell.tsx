@@ -2,11 +2,11 @@ import { useEffect } from "react"
 
 import "./CodeCell.css"
 
-import { Cell } from "../state"
+import { Cell } from "../../state"
 
-import { useActions } from "../hooks/useActions"
-import { useCumulativeCode } from "../hooks/useCumulativeCode"
-import { useTypedSelector } from "../hooks/useTypedSelector"
+import { useActions } from "../../hooks/useActions"
+import { useCumulativeCode } from "../../hooks/useCumulativeCode"
+import { useTypedSelector } from "../../hooks/useTypedSelector"
 
 import CodeEditor from "./CodeEditor"
 import Preview from "./Preview"
