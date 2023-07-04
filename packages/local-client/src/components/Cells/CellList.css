@@ -1,7 +1,5 @@
 .cell-list {
-  /* margin: 0 25px; */
-  /* maybe 50vh is a bit too much */
-  margin: 0 25px 50vh;
+  margin: 0 25px;
 }
 
 .react-draggable-transparent-selection .cell-list {
