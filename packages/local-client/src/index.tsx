@@ -12,7 +12,31 @@ import CellList from "./components/Cells/CellList"
 const App = () => {
   return (
     <Provider store={store}>
-      <CellList />
+      <div style={{ minHeight: "calc(100vh - 9rem - 1em)" }}>
+        <section className="hero is-primary">
+          <div className="hero-body">
+            <p className="title">CodeScribe</p>
+            <p className="subtitle">
+              Your online code and documentation editor
+            </p>
+          </div>
+        </section>
+        <CellList />
+      </div>
+      <footer className="footer">
+        <div className="content has-text-centered">
+          <p>
+            <strong>CodeScribe</strong> /{" "}
+            <a
+              href="https://nadialefebvre.dev"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Nadia Lefebvre
+            </a>
+          </p>
+        </div>
+      </footer>
     </Provider>
   )
 }
